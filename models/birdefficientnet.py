@@ -5,7 +5,7 @@ import timm
 
 
 class BirdEfficientNet(nn.Module):
-    def __init__(self, model_name="efficientnet_b0", num_classes=207):
+    def __init__(self, model_name="efficientnet_b0", num_classes=206):
         super().__init__()
         self.backbone = timm.create_model(model_name, pretrained=True, in_chans=1, num_classes=0)
         self.head = nn.Sequential(
