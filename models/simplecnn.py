@@ -34,7 +34,7 @@ class CNNEncoder(nn.Module):
 
 
 class BirdCLEFClassifier(nn.Module):
-    def __init__(self, encoder, num_classes=207):
+    def __init__(self, encoder, num_classes=206):
         super().__init__()
         self.encoder = encoder
         self.head = nn.Sequential(
