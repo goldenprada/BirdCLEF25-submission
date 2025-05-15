@@ -5,7 +5,7 @@ from torchvision.models import resnet18
 
 
 class BirdResNet(nn.Module):
-    def __init__(self, num_classes=207):
+    def __init__(self, num_classes=206):
         super().__init__()
         self.backbone = resnet18(pretrained=False)
         self.backbone.conv1 = nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3, bias=False)
