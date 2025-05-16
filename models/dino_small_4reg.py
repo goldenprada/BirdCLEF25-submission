@@ -6,7 +6,7 @@ import torch
 class BirdViTSmallLunitDINO(nn.Module):
     def __init__(self, model_name="hf-hub:1aurent/vit_small_patch8_224.lunit_dino", num_classes=206):
         super().__init__()
-        self.backbone = timm.create_model(model_name, pretrained=True, in_chans=1, num_classes=1)
+        self.backbone = timm.create_model(model_name, pretrained=True, in_chans=1, num_classes=0)
         self.head = nn.Sequential(
             nn.Linear(self.backbone.num_features, 512),
             nn.ReLU(),
